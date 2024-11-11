@@ -13,5 +13,7 @@ export type BaseProduct = {
     category: 'clothing';
     size: string; 
   };
-  
-  
+  export type Books = BaseProduct & {
+    category: 'book';
+    author: string; 
+  }

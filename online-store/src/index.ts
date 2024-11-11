@@ -1,4 +1,4 @@
-import { Electronics, Clothing } from './types';
+import { Electronics, Clothing, Books } from './types';
 import { findProduct, filterByPrice } from './productFunctions';
 import { addToCart, calculateTotal, CartItem } from './cartFunctions';
 
@@ -56,6 +56,36 @@ const clothing: Clothing[] = [
     size: 'XL'
   }
 ];
+const books: Books[] = [
+  {
+    id: 1,
+    name: "To Kill a Mockingbird",
+    price: 180,
+    category: 'book',
+    author: 'Harper Lee'
+  },
+  {
+    id: 2,
+    name: "Pride and Prejudice",
+    price: 200,
+    category: 'book',
+    author: 'Jane Austen'
+  },
+  {
+    id: 3,
+    name: "The Hobbit",
+    price: 250,
+    category: 'book',
+    author: 'J.R.R. Tolkien'
+  },
+  {
+    id: 4,
+    name: "Moby Dick",
+    price: 220,
+    category: 'book',
+    author: 'Herman Melville'
+  }
+];
 
 const foundProduct = findProduct(electronics, 2);
 console.log("Знайдений товар:", foundProduct);
@@ -63,7 +93,7 @@ console.log("Знайдений товар:", foundProduct);
 const affordableElectronics = filterByPrice(electronics, 15000);
 console.log("Електроніка до 15000:", affordableElectronics);
 
-let cart: CartItem<Electronics | Clothing >[] = [];
+let cart: CartItem<Electronics | Clothing | Books >[] = [];
 cart = addToCart(cart, electronics[0], 1);
 cart = addToCart(cart, clothing[1], 2);
 
